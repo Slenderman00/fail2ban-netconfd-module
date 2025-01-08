@@ -1,0 +1,60 @@
+module fail2ban {
+    yang-version 1.1;
+    namespace "urn:lsi:params:xml:ns:yang:fail2ban";
+    prefix fail2ban;
+
+    organization "Lightside Instruments AS";
+
+    description 
+        "fail2ban monitoring and management module.";
+
+    container jails {
+        config false;
+        list output {
+            key "name";
+            leaf "name" {
+                type string;
+            }
+
+            container filter {
+                key "currently-failed";
+                leaf "currently-failed" {
+                    type counter32;
+                }
+
+                key "total-failed";
+                leaf "total-failed" {
+                    type counter32;
+                }
+
+                key "journal-matches"
+                leaf "journal-matches" {
+                    type string;
+                }
+            }
+
+            container actions {
+                key "currently-banned";
+                leaf "currently-banned" {
+                    type counter32;
+                }
+
+                key "total-banned";
+                leaf "total-banned" {
+                    type counter32;
+                }
+                
+                container banned {
+                    list output {
+                        key "ip"
+                        leaf ip {
+                            type ip-address;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+      
+}
