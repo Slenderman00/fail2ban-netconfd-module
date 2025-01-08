@@ -43,7 +43,7 @@ module fail2ban {
                 leaf "total-banned" {
                     type counter32;
                 }
-                
+
                 container banned {
                     list output {
                         key "ip"
@@ -54,7 +54,5 @@ module fail2ban {
                 }
             }
         }
-
     }
-      
 }
