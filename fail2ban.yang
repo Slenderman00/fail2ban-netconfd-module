@@ -6,7 +6,7 @@ module fail2ban {
     organization "Lightside Instruments AS";
 
     description 
-        "fail2ban monitoring and management module.";
+        "fail2ban monitoring module.";
 
     container jails {
         config false;
