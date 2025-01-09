@@ -20,10 +20,23 @@
 #include "agt_rpc.h"
 #include "dlq.h"
 #include "ncx.h"
-#include "ncxmod.h
+#include "ncxmod.h"
 #include "ncxtypes.h"
 #include "status.h"
 #include "rpc.h"
 #include "val.h"
 #include "val123.h"
 #include "val_set_cplxval_obj.h"
+
+#define BUFSIZE 1000000
+
+status_t y_fail2ban_init(const xmlChar *modname, const xmlChar *revision) {
+
+}
+
+status_t y_fail2ban_init2(void) {
+
+}
+
+void y_fail2ban_cleanup(void) {   
+}
